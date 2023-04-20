@@ -6,6 +6,10 @@ install-software() {
   software="vim curl silversearcher-ag openjdk-8-jdk"
   sudo apt install -y $software
   sudo cp cljfmt /usr/local/bin
+  git clone git clone --depth 1 https://github.com/junegunn/fzf.git
+  cd fzf
+  echo 'y\ny\ny\n' | ./install
+  cd $DIR
 }
 
 vim-plugins () {
@@ -28,6 +32,7 @@ vim-plugins () {
   rm paredit.zip
   cd ..
   cd $DIR
+  cp .vimrc ~/
 }
 
 setup-clojure () {
