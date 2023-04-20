@@ -3,7 +3,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd $DIR
 
 install-software() {
-  software="vim silversearcher-ag"
+  software="vim curl silversearcher-ag openjdk-8-jdk"
   sudo apt install -y $software
 }
 
@@ -29,9 +29,24 @@ vim-plugins () {
   cd $DIR
 }
 
+setup-clojure () {
+  curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein > lein
+  chmod +x lein
+  sudo mv lein /usr/local/bin/
+  lein -version
+  cp profiles.clj ~/.lein/
+  cd $DIR
+  git clone https://github.com/komcrad/repl-reload.git
+  cd repl-reload
+  git checkout updates
+  lein install
+  cd $DIR
+}
+
 main() {
   install-software
   vim-plugins
+  setup-clojure
 }
 
 main
