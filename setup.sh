@@ -3,7 +3,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd $DIR
 
 install-software() {
-  software="vim curl silversearcher-ag openjdk-8-jdk"
+  software="vim curl silversearcher-ag openjdk-8-jdk i3"
   sudo apt install -y $software
   sudo cp cljfmt /usr/local/bin
 }
