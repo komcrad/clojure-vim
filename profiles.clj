@@ -3,6 +3,7 @@
                   [cider/cider-nrepl "0.25.4"]]
         :dependencies [[org.exupero/clipboard "0.1.0"]
                        [komcrad/repl-reload "0.1.3-SNAPSHOT"]
+                       [komcrad-utils "0.12.1"]
                        [nrepl "0.8.3"]
                        [pjstadig/humane-test-output "0.11.0"]
                        [cljfmt "0.6.7"]]
