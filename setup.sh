@@ -5,6 +5,7 @@ cd $DIR
 install-software() {
   software="vim curl silversearcher-ag openjdk-8-jdk"
   sudo apt install -y $software
+  sudo cp cljfmt /usr/local/bin
 }
 
 vim-plugins () {
