@@ -6,7 +6,6 @@ install-software() {
   software="vim curl silversearcher-ag openjdk-8-jdk"
   sudo apt install -y $software
   sudo cp cljfmt /usr/local/bin
-  git clone --depth 1 https://github.com/junegunn/fzf.git
 }
 
 vim-plugins () {
@@ -25,8 +24,8 @@ vim-plugins () {
   git clone --depth 1 https://github.com/junegunn/fzf.git
   cd fzf
   echo 'y\ny\ny\n' | ./install
-  mkdir paredit.vim
   cd ~/.vim/bundle
+  mkdir paredit.vim
   cd paredit.vim
   curl https://www.vim.org/scripts/download_script.php?src_id=25042 > paredit.zip
   unzip paredit.zip
